@@ -1,7 +1,6 @@
 # Cmpe 250 Assignment 4
 
 * **Deadline:** 03.12.2019 Tuesday @23:00, very strict.
-* For your questions on the project, please contact with your student teaching assistant Kayacan Vesek via [kayacanvesek@gmail.com](mailto:kayacanvesek@gmail.com).
 
 ## Description
 
