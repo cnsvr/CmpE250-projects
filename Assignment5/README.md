@@ -1,7 +1,6 @@
 # Cmpe 250 Assignment 5
 
 * **Deadline:** 22.12.2019 Sunday @23:00, very strict.
-* For your questions on the project, please contact with your student teaching assistant Ahmet Gedemenli via [afgedemenli@gmail.com](mailto:afgedemenli@gmail.com).
 
 ## Description
 
