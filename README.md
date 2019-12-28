@@ -1,2 +1,1 @@
-# CmpE250_Projects
-Data Structures &amp; Algorithms
+# CmpE250 - Data Structures & Algorithms
