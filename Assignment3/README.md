@@ -1,7 +1,6 @@
 # Cmpe 250 Assignment 3
 
 * **Deadline:** 16.11.2019 Saturday @23:00, very strict.
-* For your questions on the project, please contact with your student teaching assistant Kayacan Vesek via [kayacanvesek@gmail.com](mailto:kayacanvesek@gmail.com).
 
 ## Description
 Cmpe Airlines is an airline company that aims to provide highest quality services for their customers. They are planning to change their customer assignment policy, and you are expected to build a system that assigns customers to the airplane seats with desired constraints.
