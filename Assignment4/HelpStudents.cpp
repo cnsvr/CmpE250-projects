@@ -131,6 +131,7 @@ long long int HelpStudents::secondStudent() {
 
 }
 long long int HelpStudents::thirdStudent() {
+    
     //BFS
 
     list<int> queue;
