@@ -10,11 +10,11 @@ Notes: Anything you want to say about your code that will be helpful in the grad
 
 using namespace std;
 
-HelpStudents::HelpStudents(int  N, int  M, int K, vector < pair< pair <int,int> , int > > ways) {
+HelpStudents::HelpStudents(int N, int M, int K, vector<pair<pair<int,int>,int>> ways) {
     this->N = N;
     this->M = M;
     this->K = K;
-    this->adjacencyList = new list< pair<int,int> >[N+1];
+    this->adjacencyList = new list<pair<int,int>>[N+1];
 
     for (int i = 0; i < ways.size(); ++i) {
         addEdge(ways[i].first.first,ways[i].first.second,ways[i].second);
@@ -30,7 +30,7 @@ HelpStudents::~HelpStudents() {
     delete[] adjacencyList;
 }
 
-long long int maxEdge(int parent[],int j,int max,long long int key[]){
+long long int maxEdge(int parent[], int j, int max, long long int key[]){
     if (parent[j] == -1){
         return max;
     } else{
@@ -46,7 +46,7 @@ long long int HelpStudents::firstStudent() {
 
     typedef pair<long long int,int> p;
 
-    priority_queue<p,vector<p>, greater<p> > pq;
+    priority_queue<p,vector<p>,greater<p>> pq;
 
     long long int dist[N+1];
     bool check[N+1];
@@ -67,8 +67,8 @@ long long int HelpStudents::firstStudent() {
 
         check[u] = true;
 
-        list < pair<int,int>>:: iterator itr;
-        for (itr = adjacencyList[u].begin(); itr != adjacencyList[u].end();++itr) {
+        list<pair<int,int>>:: iterator itr;
+        for (itr = adjacencyList[u].begin(); itr != adjacencyList[u].end(); ++itr) {
             int v = (*itr).first;
             int w = (*itr).second;
 
@@ -87,7 +87,7 @@ long long int HelpStudents::secondStudent() {
 
     typedef pair<int,int> p;
 
-    priority_queue<p,vector<p>, greater<p> > pq;
+    priority_queue<p,vector<p>,greater<p>> pq;
 
     int parent[N+1];
     bool check[N+1];
@@ -114,8 +114,8 @@ long long int HelpStudents::secondStudent() {
 
         check[u] = true;
 
-        list < pair<int,int>>:: iterator itr;
-        for (itr = adjacencyList[u].begin(); itr != adjacencyList[u].end();++itr) {
+        list<pair<int,int>>:: iterator itr;
+        for (itr = adjacencyList[u].begin(); itr != adjacencyList[u].end(); ++itr) {
             int v = (*itr).first;
             int w = (*itr).second;
 
@@ -152,8 +152,8 @@ long long int HelpStudents::thirdStudent() {
     while (!queue.empty()){
         int u = queue.front();
         queue.pop_front();
-        list < pair<int,int>>:: iterator itr;
-        for (itr = adjacencyList[u].begin(); itr != adjacencyList[u].end();++itr) {
+        list<pair<int,int>>:: iterator itr;
+        for (itr = adjacencyList[u].begin(); itr != adjacencyList[u].end(); ++itr) {
             int v = (*itr).first;
 
             if(!visited[v]){
@@ -177,10 +177,10 @@ long long int HelpStudents::fourthStudent() {
 
     long long int result = 0;
 
-    set<pair<int,int> > set;
+    set<pair<int,int>> set;
     typedef pair<int,int> p;
 
-    priority_queue<p,vector<p>, greater<p> > pq;
+    priority_queue<p,vector<p>,greater<p>> pq;
 
     pq.push(make_pair(0,1));
 
@@ -199,8 +199,8 @@ long long int HelpStudents::fourthStudent() {
 
         long long int min = INF;
         long long int vertex = INF;
-        list < pair<int,int>>:: iterator itr;
-        for (itr = adjacencyList[u].begin(); itr != adjacencyList[u].end();++itr) {
+        list<pair<int,int>>:: iterator itr;
+        for (itr = adjacencyList[u].begin(); itr != adjacencyList[u].end(); ++itr) {
             int v = (*itr).first;
             int w =  (*itr).second;
 
@@ -228,15 +228,15 @@ long long int HelpStudents::fourthStudent() {
 
 long long int HelpStudents::fifthStudent() {
 
-    typedef pair< pair <long long int,int> , int >  p;
+    typedef pair<pair<long long int,int>,int> p;
 
-    priority_queue<p,vector<p>, greater<p> > pq;
+    priority_queue<p,vector<p>,greater<p>> pq;
 
     long long int distJ[N+1];
     long long int distNJ1[N+1];
     long long int distNJ2[N+1];
 
-    for (int i = 1; i <= N ; ++i) {
+    for (int i = 1; i <= N; ++i) {
         distJ[i] = INF;
         distNJ1[i] = INF;
         distNJ2[i] = INF;
@@ -248,18 +248,18 @@ long long int HelpStudents::fifthStudent() {
     distNJ1[1] = 0;
 
     while (!pq.empty()){
-        pair< pair <int,int> , int > temp  = pq.top();
+        pair<pair<int,int>,int> temp  = pq.top();
         pq.pop();
 
         int u = temp.second;
 
-        list < pair<int,int>>:: iterator itr;
-        for (itr = adjacencyList[u].begin(); itr != adjacencyList[u].end();++itr) {
+        list<pair<int,int>>:: iterator itr;
+        for (itr = adjacencyList[u].begin(); itr != adjacencyList[u].end(); ++itr) {
 
             int v = (*itr).first;
             int w = (*itr).second;
 
-            if(temp.first.second == 0){ // JUMP
+            if (temp.first.second == 0){ // JUMP
                 int dist = temp.first.first;
 
                 if (dist<distNJ1[v]){
@@ -267,17 +267,17 @@ long long int HelpStudents::fifthStudent() {
                     pq.push(make_pair(make_pair(dist,1),v));
                 }
 
-            } else{
-                if(temp.first.second == 1){
+            } else {
+                if (temp.first.second == 1){
                     int dist = temp.first.first;
-                    if(dist + w < distNJ2[v]){
+                    if (dist + w < distNJ2[v]){
                         distNJ2[v] = dist + w;
                         pq.push(make_pair(make_pair(dist+w,2),v));
                     }
 
-                } else{
+                } else {
                     int dist = temp.first.first;
-                    if(dist+w < distJ[v]){
+                    if (dist+w < distJ[v]){
                         distJ[v] = dist+w;
                         pq.push(make_pair(make_pair(dist+w,0),v));
                     }
