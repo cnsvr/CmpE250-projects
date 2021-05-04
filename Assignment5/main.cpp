@@ -1,6 +1,6 @@
 /*
-Student Name:
-Student Number:
+Student Name: Furkan Canseer
+Student Number: 2016400348
 Project Number: 5
 Compile Status: [SUCCESS/FAIL]
 Running Status: [SUCCESS/FAIL]
@@ -65,34 +65,23 @@ int main(int argc, char* argv[]){
     }
     prices.insert(prices.end(),200000,0);
 
-
     if(N <= 0 || M <= 0){
         return 0;
     } else{
         long long int K[N+1];
         long long int A[N+M+1];
-
         K[0] = 0;
-
-
 
         for (int j = 1; j <= M; ++j) {
             A[j] = prices[j-1];
-
         }
-
-
+        
         for (int i = 1 ; i <= N ; ++i) {
-
             K[i] = K[i-1] + A[i];
             A[i+M] = A[i] + prices[i+M-1];
-
             outFile << K[i] << " ";
         }
-
     }
-
-
 
     return 0;
 }
